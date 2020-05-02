@@ -1,6 +1,6 @@
 require(`dotenv`).config({
   path: `.env`,
-})
+});
 
 module.exports = {
   siteMetadata: {
@@ -10,7 +10,11 @@ module.exports = {
     {
       resolve: `@lekoarts/gatsby-theme-emilia`,
       // See the theme's README for all available options
-      options: {},
+      options: {
+        name: "Kylee Angelo",
+        location: "United States",
+        showThemeAuthor: false,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -22,9 +26,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Emilia - @lekoarts/gatsby-theme-emilia`,
-        short_name: `Emilia`,
-        description: `Minimalistic portfolio/photography site with masonry grid, page transitions and big images. Themeable with Theme UI.`,
+        name: `Kylee Angelo - A professional designer`,
+        short_name: `Kylee Angelo`,
+        description: `The personal website of Kylee Angelo.`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#3182ce`,
@@ -46,4 +50,4 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
   ],
-}
+};
