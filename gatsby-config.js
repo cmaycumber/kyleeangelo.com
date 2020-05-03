@@ -9,7 +9,7 @@ module.exports = {
     // Can be used for e.g. JSONLD
     siteHeadline: `Kylee Angelo - Interior Design Portfolio`,
     // Will be used to generate absolute URLs for og:image etc.
-    siteUrl: `https://wwww.kyleeangelo.com`,
+    siteUrl: `https://www.kyleeangelo.com`,
     // Used for SEO
     siteDescription: `The personal design portfolio of Kylee Angelo`,
     // Will be set on the <html /> tag
