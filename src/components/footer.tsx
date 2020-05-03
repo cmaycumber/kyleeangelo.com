@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { Box, jsx, Container, Flex, Link, useColorMode } from "theme-ui";
-import useEmiliaConfig from "@lekoarts/gatsby-theme-emilia/src/hooks/use-emilia-config";
 import ColorModeToggle from "@lekoarts/gatsby-theme-emilia/src/components/colormode-toggle";
 
 const Footer = () => {
