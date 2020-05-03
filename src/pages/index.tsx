@@ -2,7 +2,7 @@
 /* eslint no-shadow: 0 */
 import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
-import Projects from "../@lekoarts/gatsby-theme-emilia/components/projects";
+import Projects from "../components/projects";
 
 const Home = ({ data }: any) => {
   return <Projects projects={data.allDatoCmsProject.nodes} />;

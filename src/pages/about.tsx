@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "../@lekoarts/gatsby-theme-emilia/components/header";
+import Header from "../components/header";
 import Layout from "@lekoarts/gatsby-theme-emilia/src/components/layout";
 
 const About = () => {

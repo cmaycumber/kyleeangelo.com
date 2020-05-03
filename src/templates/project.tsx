@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { graphql } from "gatsby";
-import ProjectComponent from "../@lekoarts/gatsby-theme-emilia/components/project";
+import ProjectComponent from "../components/project";
 
 const Project = ({ data, pageContext }: any) => {
   return <ProjectComponent project={data.datoCmsProject} pageContext={pageContext} />;

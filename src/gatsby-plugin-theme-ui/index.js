@@ -1,10 +1,7 @@
 import { merge } from "theme-ui";
 import { tailwind } from "@theme-ui/presets";
 
-console.log(tailwind.colors.gray);
-
 export default merge(tailwind, {
-  initialColorModeName: `light`,
   useCustomProperties: true,
   useColorSchemeMediaQuery: true,
   colors: {

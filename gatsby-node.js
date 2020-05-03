@@ -1,6 +1,15 @@
-exports.onCreateNode = async ({ node, actions, reporter }) => {};
-
 const projectTemplate = require.resolve(`./src/templates/project.tsx`);
+
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === `Mdx`) {
+    createNodeField({
+      node,
+      name: `fileAbsolutePath`,
+      value: "content",
+    });
+  }
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
