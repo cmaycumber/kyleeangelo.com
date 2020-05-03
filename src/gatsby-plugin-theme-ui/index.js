@@ -1,6 +1,8 @@
 import { merge } from "theme-ui";
 import { tailwind } from "@theme-ui/presets";
 
+console.log(tailwind.colors.gray);
+
 export default merge(tailwind, {
   initialColorModeName: `light`,
   useCustomProperties: true,
@@ -50,7 +52,6 @@ export default merge(tailwind, {
       position: `relative`,
       overflow: `hidden`,
       justifyContent: `center`,
-      height: 72,
       borderBottom: "1px solid",
       borderColor: "muted",
     },
@@ -66,7 +67,7 @@ export default merge(tailwind, {
       py: 1,
       px: 3,
       ml: 2,
-      color: "primary",
+      color: "text",
       textDecoration: "none",
       "::before": {
         position: "absolute",
@@ -74,7 +75,7 @@ export default merge(tailwind, {
         left: 0,
         width: "100%",
         height: 1,
-        backgroundColor: "muted",
+        backgroundColor: "text",
         content: "''",
         transition: "top 0.3s",
       },
@@ -84,7 +85,7 @@ export default merge(tailwind, {
         left: 0,
         width: 1,
         height: 1,
-        backgroundColor: "muted",
+        backgroundColor: "text",
         content: "''",
         transition: "height 0.3s",
       },

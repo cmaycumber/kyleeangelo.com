@@ -2,18 +2,18 @@
 /* eslint no-shadow: 0 */
 import { jsx, Container, Styled, Box } from "theme-ui";
 import { useSpring, animated, config } from "react-spring";
-import { graphql, useStaticQuery } from "gatsby";
 
 import Layout from "@lekoarts/gatsby-theme-emilia/src/components/layout";
-import Header from "@lekoarts/gatsby-theme-emilia/src/components/header";
-import Card from "@lekoarts/gatsby-theme-emilia/src/components/card";
+import Header from "./header";
+import Card from "./card";
 
 type Props = {
   projects: {
     slug: string;
     title: string;
-    cover: {
-      childImageSharp: any;
+    coverImage: {
+      colors: any;
+      fluid: any;
     };
   }[];
 };
@@ -31,24 +31,6 @@ type ProjecsStaticQuery = {
 };
 
 const Projects = ({ projects }: Props) => {
-  // const data = useStaticQuery<ProjecsStaticQuery>(graphql`
-  //   query {
-  //     allProject(sort: { fields: date, order: DESC }) {
-  //       nodes {
-  //         ... on MdxProject {
-  //           parent {
-  //             ... on Mdx {
-  //               fields {
-  //                 colorThief
-  //               }
-  //             }
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
-
   const fadeUpProps = useSpring({
     config: config.slow,
     delay: 600,
@@ -107,15 +89,20 @@ const Projects = ({ projects }: Props) => {
               gridColumnGap: 4,
             }}
           >
-            {/* {projects.map((project, index) => {
-              const val = data.allProject.nodes[index].parent.fields.colorThief;
+            {projects.map((project, index) => {
+              const val = [
+                project?.coverImage?.colors[0].red,
+                project?.coverImage?.colors[0].green,
+                project?.coverImage?.colors[0].blue,
+              ];
+
               const shadow = `${val[0]}, ${val[1]}, ${val[2]}`;
 
               const px = [`64px`, `32px`, `16px`, `8px`, `4px`];
               const shadowArray = px.map((v) => `rgba(${shadow}, 0.15) 0px ${v} ${v} 0px`);
 
               return <Card key={project.slug} item={project} overlay={shadow} shadow={shadowArray} inGrid />;
-            })} */}
+            })}
           </Container>
         </animated.div>
       </Box>

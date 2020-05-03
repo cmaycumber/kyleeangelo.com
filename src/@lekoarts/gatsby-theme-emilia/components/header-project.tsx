@@ -12,9 +12,8 @@ import Header from "./header";
 
 type HeaderProjectProps = {
   title: string;
-  areas: string[];
   description?: string;
-  date: string;
+  logo: any;
 };
 
 type AvatarStaticQuery = {
@@ -23,7 +22,7 @@ type AvatarStaticQuery = {
   };
 };
 
-const HeaderProject = ({ title, areas, description, date }: HeaderProjectProps) => {
+const HeaderProject = ({ title, description, logo }: HeaderProjectProps) => {
   const { name } = useEmiliaConfig();
   const avatar = useStaticQuery<AvatarStaticQuery>(graphql`
     query {
@@ -75,21 +74,17 @@ const HeaderProject = ({ title, areas, description, date }: HeaderProjectProps) 
             </Link>
           </animated.div>
           <div sx={{ mt: 4, mb: [6, 6, 7] }}>
+            <Flex sx={{ justifyContent: "center" }}>
+              <animated.div style={titleProps}>
+                <Img sx={{ width: 120 }} fluid={logo} />
+              </animated.div>
+            </Flex>
             <animated.div style={titleProps}>
               <Heading as="h1" variant="styles.h1">
                 {title}
               </Heading>
             </animated.div>
             <animated.div style={infoProps}>
-              <Styled.p sx={{ mb: 0, mt: 4 }}>{date}</Styled.p>
-              <div>
-                {areas.map((area, index) => (
-                  <React.Fragment key={area}>
-                    {index > 0 && `, `}
-                    {area}
-                  </React.Fragment>
-                ))}
-              </div>
               {description && (
                 <div sx={{ maxWidth: `900px`, mx: `auto`, mt: 5, p: { textAlign: `left` } }}>
                   <MDXRenderer>{description}</MDXRenderer>

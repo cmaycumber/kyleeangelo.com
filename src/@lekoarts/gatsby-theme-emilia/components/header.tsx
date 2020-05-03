@@ -1,26 +1,24 @@
 /** @jsx jsx */
-import { jsx, Heading, Flex, Container } from "theme-ui";
+import { jsx, Heading, Flex, Container, useThemeUI } from "theme-ui";
 import { animated, useSpring, config } from "react-spring";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import useEmiliaConfig from "@lekoarts/gatsby-theme-emilia/src/hooks/use-emilia-config";
-import HeaderBackground from "@lekoarts/gatsby-theme-emilia/src/components/header-background";
-import Location from "@lekoarts/gatsby-theme-emilia/src/assets/location";
-import SocialMediaList from "@lekoarts/gatsby-theme-emilia/src/components/social-media-list";
-
-type AvatarStaticQuery = {
-  file: {
-    childImageSharp: any;
-  };
-};
 
 const Header = ({ className }: any) => {
-  const { name, location, assetsPath } = useEmiliaConfig();
-  const avatar = useStaticQuery<AvatarStaticQuery>(graphql`
+  const { colorMode } = useThemeUI();
+  console.log(colorMode);
+  const logo = useStaticQuery<any>(graphql`
     query {
-      file(name: { eq: "avatar" }) {
+      logoDark: file(name: { eq: "logo-light" }) {
         childImageSharp {
-          fixed(width: 120, height: 40, quality: 100) {
+          fixed(height: 60, quality: 100) {
+            ...GatsbyImageSharpFixed_withWebp
+          }
+        }
+      }
+      logoLight: file(name: { eq: "logo-dark" }) {
+        childImageSharp {
+          fixed(height: 60, quality: 100) {
             ...GatsbyImageSharpFixed_withWebp
           }
         }
@@ -45,9 +43,12 @@ const Header = ({ className }: any) => {
   return (
     <Flex sx={{ mb: 7, alignItems: "center" }} className={className} as="header" variant="layout.projectHead">
       <Container>
-        <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        <Flex sx={{ justifyContent: "center", alignItems: "center" }}>
           <Link to="/">
-            <Img fixed={avatar.file.childImageSharp.fixed} />
+            <Img
+              critical
+              fixed={colorMode === "dark" ? logo.logoLight.childImageSharp.fixed : logo.logoDark.childImageSharp.fixed}
+            />
           </Link>
           {/* <Link to="/about/" sx={{ variant: "links.nav" }}>
             About

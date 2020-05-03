@@ -8,28 +8,24 @@ import ProjectPagination from "@lekoarts/gatsby-theme-emilia/src/components/proj
 import SEO from "@lekoarts/gatsby-theme-emilia/src/components/seo";
 
 type ProjectProps = {
-  data: {
-    project: {
-      body: string;
-      excerpt: string;
-      date: string;
-      slug: string;
-      title: string;
-      areas: string[];
-      cover: {
-        childImageSharp: {
-          resize: {
-            src: string;
-          };
-        };
+  project: {
+    slug: string;
+    title: string;
+    description: string;
+    descriptionNode: {
+      childMdx: {
+        body: string;
       };
     };
-    images: {
-      nodes: {
-        name: string;
-        childImageSharp: any;
-      }[];
+    coverImage: {
+      url: string;
     };
+    logo: { fluid: any; fixed: any };
+    images: {
+      fluid: any;
+      basename: string;
+      alt: string;
+    }[];
   };
   pageContext: {
     prev: {
@@ -55,25 +51,29 @@ type ProjectProps = {
   };
 };
 
-const Project = ({ data: { project, images }, pageContext: { prev, next } }: ProjectProps) => {
+const Project = ({ project, pageContext: { prev, next } }: ProjectProps) => {
   const imageFade = useSpring({ config: config.slow, delay: 800, from: { opacity: 0 }, to: { opacity: 1 } });
 
   return (
     <Layout>
       <SEO
         title={project.title}
-        description={project.excerpt}
+        description={project.description}
         pathname={project.slug}
-        image={project.cover.childImageSharp.resize.src}
+        image={project.coverImage.url}
       />
-      <HeaderProject title={project.title} description={project.body} areas={project.areas} date={project.date} />
+      <HeaderProject
+        title={project.title}
+        description={project.descriptionNode.childMdx.body}
+        logo={project.logo.fluid}
+      />
       <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`] }}>
-        {images.nodes.map((image) => (
-          <animated.div key={image.name} style={imageFade}>
-            <Img fluid={image.childImageSharp.fluid} alt={image.name} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
+        {project.images.map((image) => (
+          <animated.div key={image.basename} style={imageFade}>
+            <Img fluid={image.fluid} alt={image.alt} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
           </animated.div>
         ))}
-        <ProjectPagination prev={prev} next={next} />
+        {/* <ProjectPagination prev={prev} next={next} /> */}
       </Container>
     </Layout>
   );
