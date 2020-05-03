@@ -4,7 +4,20 @@ require(`dotenv`).config({
 
 module.exports = {
   siteMetadata: {
-    siteTitleAlt: `Emilia - Gatsby Starter Portfolio`,
+    siteTitle: `Kylee Angelo Portfolio`,
+    siteTitleAlt: `Kylee Angelo - Interior Design Portfolio`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Kylee Angelo - Interior Design Portfolio`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://wwww.kyleeangelo.com`,
+    // Used for SEO
+    siteDescription: `The personal design portfolio of Kylee Angelo`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/background.jpg`,
+    // Twitter Handle
+    author: `@chadwick_maycumber`,
   },
   plugins: [
     {
@@ -41,10 +54,10 @@ module.exports = {
       options: {
         name: `Kylee Angelo - A professional designer`,
         short_name: `Kylee Angelo`,
-        description: `The personal website of Kylee Angelo.`,
+        description: `Kylee Angelo - Interior Design Portfolio`,
         start_url: `/`,
         background_color: `#fff`,
-        theme_color: `#3182ce`,
+        theme_color: `#cbd5e0`,
         display: `standalone`,
         icon: "static/favicon.jpg",
       },
