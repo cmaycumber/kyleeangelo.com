@@ -1,13 +1,11 @@
 const projectTemplate = require.resolve(`./src/templates/project.tsx`);
 
-exports.onCreateNode = ({ node, getNode, actions }) => {
+exports.onCreateNode = async ({ node, actions, reporter }) => {
   const { createNodeField } = actions;
+
   if (node.internal.type === `Mdx`) {
-    createNodeField({
-      node,
-      name: `fileAbsolutePath`,
-      value: "content",
-    });
+    createNodeField({ node, name: `fields`, value: "placeholder" });
+    createNodeField({ node, name: `colorThief`, value: "placeholder" });
   }
 };
 

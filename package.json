@@ -7,11 +7,12 @@
   "license": "MIT",
   "starter-name": "gatsby-starter-portfolio-emilia",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "remove:theme:gatsby-node": "rm -f node_modules/@lekoarts/gatsby-theme-emilia/gatsby-node.js",
+    "build": "yarn remove:theme:gatsby-node && gatsby build",
+    "develop": "yarn remove:theme:gatsby-node && gatsby develop",
     "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
     "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
+    "start": "yarn develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
