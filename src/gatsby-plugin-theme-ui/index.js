@@ -4,6 +4,7 @@ import { tailwind } from "@theme-ui/presets";
 export default merge(tailwind, {
   initialColorModeName: `light`,
   useCustomProperties: true,
+  useColorSchemeMediaQuery: true,
   colors: {
     text: tailwind.colors.gray[8],
     primary: tailwind.colors.blue[6],
@@ -43,17 +44,59 @@ export default merge(tailwind, {
     header: {
       position: `relative`,
       overflow: `hidden`,
-      justifyContent: `center`,
+      alignItems: "center",
     },
     projectHead: {
       position: `relative`,
       overflow: `hidden`,
       justifyContent: `center`,
+      height: 72,
+      borderBottom: "1px solid",
+      borderColor: "muted",
     },
     container: {
       px: [3, 4],
       py: [2, 3],
-      maxWidth: 1280,
+      maxWidth: 1024,
+    },
+  },
+  links: {
+    nav: {
+      position: "relative",
+      py: 1,
+      px: 3,
+      ml: 2,
+      color: "primary",
+      textDecoration: "none",
+      "::before": {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: 1,
+        backgroundColor: "muted",
+        content: "''",
+        transition: "top 0.3s",
+      },
+      "::after": {
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width: 1,
+        height: 1,
+        backgroundColor: "muted",
+        content: "''",
+        transition: "height 0.3s",
+      },
+      ":hover": {
+        "::after": {
+          height: "100%",
+        },
+        "::before": {
+          top: "100%",
+          opacity: 1,
+        },
+      },
     },
   },
   styles: {
