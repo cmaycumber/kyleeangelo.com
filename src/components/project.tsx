@@ -67,7 +67,7 @@ const Project = ({ project, pageContext: { prev, next } }: ProjectProps) => {
         description={project.descriptionNode.childMdx.body}
         logo={project.logo.fluid}
       />
-      <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`] }}>
+      <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`], maxWidth: 768 }}>
         {project.images.map((image) => (
           <animated.div key={image.basename} style={imageFade}>
             <Img fluid={image.fluid} alt={image.alt} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
