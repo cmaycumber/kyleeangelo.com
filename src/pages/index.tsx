@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 /* eslint no-shadow: 0 */
 import { jsx } from "theme-ui";

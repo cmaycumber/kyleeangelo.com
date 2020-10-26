@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { Box, jsx, Container, Flex, Link, useColorMode } from "theme-ui";
 import ColorModeToggle from "@lekoarts/gatsby-theme-emilia/src/components/colormode-toggle";

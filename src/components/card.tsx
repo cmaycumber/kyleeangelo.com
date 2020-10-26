@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Link as TLink, Heading } from "theme-ui";
 import { Link } from "gatsby";

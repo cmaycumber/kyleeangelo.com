@@ -1,3 +1,4 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 /* eslint no-shadow: 0 */
 import { jsx, Container, Styled, Box } from "theme-ui";
@@ -76,7 +77,7 @@ const Projects = ({ projects }: Props) => {
   return (
     <Layout>
       <Header />
-      <Box as="main" variant="layout.main">
+      <Box sx={{ mt: 7 }} as="main" variant="layout.main">
         <animated.div style={fadeUpProps}>
           <Container
             sx={{
