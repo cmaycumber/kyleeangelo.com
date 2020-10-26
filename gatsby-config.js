@@ -21,12 +21,6 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: 'gatsby-source-filesystem', 
-      options: { 
-        path: `${__dirname}/content`,
-       },
-    },
-    {
       resolve: `gatsby-source-datocms`,
       options: {
         // You can find your read-only API token under the Settings > API tokens
