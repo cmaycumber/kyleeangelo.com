@@ -15,7 +15,7 @@ const About = ({ data }: any) => {
         <Flex
           sx={{ justifyContent: "center", alignItems: "center", py: 3, flexDirection: "column" }}
         >
-          <Styled.h1 sx={{ mb: 4 }}>About Me</Styled.h1>
+          <Styled.h1 sx={{ mb: 4, fontWeight: 'regular' }}>About Me</Styled.h1>
           <Img sx={{ width: "100%", maxWidth: 400, mb: 4 }} fluid={headshot.fluid} />
           <Styled.p>{description}</Styled.p>
         </Flex>

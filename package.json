@@ -26,6 +26,7 @@
     "gatsby-plugin-offline": "^3.2.37",
     "gatsby-plugin-sitemap": "^2.4.17",
     "gatsby-plugin-typescript": "^2.4.24",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-datocms": "^2.5.7",
     "react": "16.13.x",
     "react-dom": "16.13.x",

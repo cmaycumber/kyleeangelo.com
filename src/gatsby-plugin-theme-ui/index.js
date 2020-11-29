@@ -105,6 +105,7 @@ export default merge(tailwind, {
       padding: 0,
       boxSizing: `border-box`,
       textRendering: `optimizeLegibility`,
+        fontFamily: 'Mostra Nuova'
     },
     a: {
       color: `primary`,
@@ -122,6 +123,7 @@ export default merge(tailwind, {
       fontSize: [4, 5],
       mt: 2,
       color: `heading`,
+      fontWeight: 'normal'
     },
     h2: {
       fontSize: [3, 4],
@@ -146,5 +148,5 @@ export default merge(tailwind, {
       mb: 2,
       color: `heading`,
     },
-  },
+  }
 });
