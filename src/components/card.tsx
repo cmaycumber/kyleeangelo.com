@@ -47,7 +47,7 @@ const Card = ({ item, overlay = `0, 0, 0`, shadow = shadowArray, inGrid = false 
         },
         "&:hover, &:focus": {
           "[data-name='card-overlay']": {
-            opacity: 1,
+            opacity: .8,
           },
         },
         boxShadow: shadow.join(`, `),

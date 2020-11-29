@@ -97,10 +97,10 @@ const Projects = ({ projects }: Props) => {
                 project?.coverImage?.colors[0].blue,
               ];
 
-              const shadow = `${val[0]}, ${val[1]}, ${val[2]}`;
+              const shadow = `0, 0, 0`;
 
               const px = [`64px`, `32px`, `16px`, `8px`, `4px`];
-              const shadowArray = px.map((v) => `rgba(${shadow}, 0.15) 0px ${v} ${v} 0px`);
+              const shadowArray = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
               return <Card key={project.slug} item={project} overlay={shadow} shadow={shadowArray} inGrid />;
             })}
