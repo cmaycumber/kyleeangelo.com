@@ -8,24 +8,24 @@ import Img from "gatsby-image";
 const Header = ({ className }: any) => {
   const { colorMode } = useThemeUI();
   console.log(colorMode);
-  const logo = useStaticQuery<any>(graphql`
+  const { datoCmsLogo } = useStaticQuery<any>(graphql`
     query {
-      logoDark: file(name: { eq: "logo-light" }) {
-        childImageSharp {
-          fixed(height: 60, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+      datoCmsLogo {
+        lightLogo {
+          fixed(width: 150, height: 80) {
+            ...GatsbyDatoCmsFixed            
           }
         }
-      }
-      logoLight: file(name: { eq: "logo-dark" }) {
-        childImageSharp {
-          fixed(height: 60, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+        darkLogo {
+          fixed(width: 150, height: 80) {
+            ...GatsbyDatoCmsFixed
           }
         }
       }
     }
   `);
+
+  console.log(datoCmsLogo)
 
   const fadeUpProps = useSpring({
     config: config.slow,
@@ -62,8 +62,8 @@ const Header = ({ className }: any) => {
                 critical
                 fixed={
                   colorMode === "dark"
-                    ? logo.logoLight.childImageSharp.fixed
-                    : logo.logoDark.childImageSharp.fixed
+                    ? datoCmsLogo.lightLogo.fixed
+                    : datoCmsLogo.darkLogo.fixed
                 }
               />
             </Link>
