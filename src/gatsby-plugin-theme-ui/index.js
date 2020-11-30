@@ -106,7 +106,10 @@ export default merge(tailwind, {
       padding: 0,
       boxSizing: `border-box`,
       textRendering: `optimizeLegibility`,
-        fontFamily: 'Mostra Nuova'
+      fontFamily: 'mostra-nuova; san-serif',
+      fontWeight: 'normal',
+      fontKerning: 'normal',
+      fontStyle: 'normal'
     },
     a: {
       color: `primary`,
