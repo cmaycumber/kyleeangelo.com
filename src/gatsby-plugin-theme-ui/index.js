@@ -38,6 +38,7 @@ export default merge(tailwind, {
       pb: 4,
     },
     main: {
+      mt: '10rem !important',
       position: `relative`,
     },
     header: {
@@ -54,7 +55,7 @@ export default merge(tailwind, {
     },
     container: {
       px: [3, 4],
-      py: [2, 3],
+      pt: [1, 2],
       maxWidth: 1024,
     },
   },

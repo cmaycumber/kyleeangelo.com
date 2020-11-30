@@ -12,12 +12,12 @@ const Header = ({ className }: any) => {
     query {
       datoCmsLogo {
         lightLogo {
-          fixed(width: 150, height: 80) {
+          fixed(width: 120, height: 120) {
             ...GatsbyDatoCmsFixed            
           }
         }
         darkLogo {
-          fixed(width: 150, height: 80) {
+          fixed(width: 120, height: 120) {
             ...GatsbyDatoCmsFixed
           }
         }
@@ -59,6 +59,10 @@ const Header = ({ className }: any) => {
           <Flex sx={{ flex: 1, justifyContent: "center" }}>
             <Link to="/">
               <Img
+                imgStyle={{
+                  width: 120,
+                  height: 120,
+                }}
                 critical
                 fixed={
                   colorMode === "dark"

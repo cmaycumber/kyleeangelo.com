@@ -1,6 +1,5 @@
-/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui";
+import { jsx, Container, Box } from "theme-ui";
 import { animated, useSpring, config } from "react-spring";
 import Img from "gatsby-image";
 import Layout from "@lekoarts/gatsby-theme-emilia/src/components/layout";
@@ -68,14 +67,16 @@ const Project = ({ project, pageContext: { prev, next } }: ProjectProps) => {
         description={project.descriptionNode.childMdx.body}
         logo={project.logo.fluid}
       />
-      <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`], maxWidth: 768 }}>
-        {project.images.map((image) => (
-          <animated.div key={image.basename} style={imageFade}>
-            <Img fluid={image.fluid} alt={image.alt} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
-          </animated.div>
-        ))}
-        {/* <ProjectPagination prev={prev} next={next} /> */}
-      </Container>
+      <Box sx={{ paddingTop: '1rem' }} >
+        <Container sx={{ mt: [`-6rem`, `-6rem`, `-8rem`], maxWidth: 768 }}>
+          {project.images.map((image) => (
+            <animated.div key={image.basename} style={imageFade}>
+              <Img fluid={image.fluid} alt={image.alt} sx={{ mb: [4, 4, 5], boxShadow: `xl` }} />
+            </animated.div>
+          ))}
+          {/* <ProjectPagination prev={prev} next={next} /> */}
+        </Container>
+      </Box>
     </Layout>
   );
 };
