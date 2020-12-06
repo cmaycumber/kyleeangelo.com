@@ -38,7 +38,7 @@ export default merge(tailwind, {
       pb: 4,
     },
     main: {
-      mt: '10rem !important',
+      mt: "10rem !important",
       position: `relative`,
     },
     header: {
@@ -72,7 +72,7 @@ export default merge(tailwind, {
         top: 0,
         left: 0,
         width: "100%",
-        height: '2px',
+        height: "2px",
         backgroundColor: "text",
         content: "''",
         transition: "top 0.3s",
@@ -81,8 +81,8 @@ export default merge(tailwind, {
         position: "absolute",
         top: 0,
         left: 0,
-        width: '2px',
-        height: '2px',
+        width: "2px",
+        height: "2px",
         backgroundColor: "text",
         content: "''",
         transition: "height 0.3s",
@@ -106,10 +106,16 @@ export default merge(tailwind, {
       padding: 0,
       boxSizing: `border-box`,
       textRendering: `optimizeLegibility`,
-      fontFamily: 'mostra-nuova; san-serif',
-      fontWeight: 'normal',
-      fontKerning: 'normal',
-      fontStyle: 'normal'
+      fontFamily: "mostra-nuova; san-serif",
+      fontWeight: "normal",
+      fontKerning: "normal",
+      fontStyle: "normal",
+    },
+    ol: {
+      textAlign: "left",
+    },
+    li: {
+      marginBottom: 3,
     },
     a: {
       color: `primary`,
@@ -127,30 +133,35 @@ export default merge(tailwind, {
       fontSize: [4, 5],
       mt: 2,
       color: `heading`,
-      fontWeight: 'normal'
+      fontWeight: "normal",
     },
     h2: {
       fontSize: [3, 4],
       mt: 2,
       color: `heading`,
+      fontWeight: "normal",
     },
     h3: {
       fontSize: [2, 3],
       mt: 3,
       color: `heading`,
+      fontWeight: "normal",
     },
     h4: {
       fontSize: [1, 2],
       color: `heading`,
+      fontWeight: "normal",
     },
     h5: {
       fontSize: 1,
       color: `heading`,
+      fontWeight: "normal",
     },
     h6: {
       fontSize: 1,
       mb: 2,
       color: `heading`,
+      fontWeight: "normal",
     },
-  }
+  },
 });
