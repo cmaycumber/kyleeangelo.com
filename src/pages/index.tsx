@@ -17,6 +17,7 @@ export const query = graphql`
       nodes {
         slug
         title
+        position
         coverImage {
           colors {
             red

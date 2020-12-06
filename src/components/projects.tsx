@@ -12,6 +12,7 @@ type Props = {
   projects: {
     slug: string;
     title: string;
+    position: number;
     coverImage: {
       colors: any;
       fluid: any;
@@ -51,8 +52,10 @@ const Projects = ({ projects }: Props) => {
             </span>
             {` `}
             <br />
-            Thanks for using <b>@lekoarts/gatsby-theme-emilia</b>. You currently don't have any content in your{` `}
-            <i>projects</i> folder - that's why this page displays a placeholder text. Head over to the{` `}
+            Thanks for using <b>@lekoarts/gatsby-theme-emilia</b>. You currently don't have any
+            content in your{` `}
+            <i>projects</i> folder - that's why this page displays a placeholder text. Head over to
+            the{` `}
             <Styled.a href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-emilia">
               README
             </Styled.a>
@@ -61,9 +64,10 @@ const Projects = ({ projects }: Props) => {
           </Styled.p>
           <Styled.p>
             <b>TL;DR:</b> <br />
-            The starter automatically created the folder <code>content/projects</code>. Go into this folder, create a
-            new folder called <code>example</code> and create an <code>index.mdx</code> file there and place an image.
-            Edit the frontmatter like described in the{` `}
+            The starter automatically created the folder <code>content/projects</code>. Go into this
+            folder, create a new folder called <code>example</code> and create an{" "}
+            <code>index.mdx</code> file there and place an image. Edit the frontmatter like
+            described in the{` `}
             <Styled.a href="https://github.com/LekoArts/gatsby-themes/tree/master/themes/gatsby-theme-emilia">
               README
             </Styled.a>
@@ -90,20 +94,30 @@ const Projects = ({ projects }: Props) => {
               gridColumnGap: 4,
             }}
           >
-            {projects.map((project, index) => {
-              const val = [
-                project?.coverImage?.colors[0].red,
-                project?.coverImage?.colors[0].green,
-                project?.coverImage?.colors[0].blue,
-              ];
+            {projects
+              .sort((a, b) => a.position - b.position)
+              .map((project, index) => {
+                const val = [
+                  project?.coverImage?.colors[0].red,
+                  project?.coverImage?.colors[0].green,
+                  project?.coverImage?.colors[0].blue,
+                ];
 
-              const shadow = `0, 0, 0`;
+                const shadow = `0, 0, 0`;
 
-              const px = [`64px`, `32px`, `16px`, `8px`, `4px`];
-              const shadowArray = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
+                const px = [`64px`, `32px`, `16px`, `8px`, `4px`];
+                const shadowArray = px.map((v) => `rgba(0, 0, 0, 0.15) 0px ${v} ${v} 0px`);
 
-              return <Card key={project.slug} item={project} overlay={shadow} shadow={shadowArray} inGrid />;
-            })}
+                return (
+                  <Card
+                    key={project.slug}
+                    item={project}
+                    overlay={shadow}
+                    shadow={shadowArray}
+                    inGrid
+                  />
+                );
+              })}
           </Container>
         </animated.div>
       </Box>
